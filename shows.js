@@ -57,7 +57,7 @@ const app = express()
     saveShows(shows);
     res.json(show);
   })
-  .get('/show/:id', (req, res) => {
+  .get('/:id', (req, res) => {
     const shows = loadShows();
     const show = shows.find(show => show._id === req.params.id);
     res.json(show);
@@ -65,7 +65,7 @@ const app = express()
   })
   .get('/', (req, res) => {
     const shows = loadShows();
-    res.json({ shows });
+    res.json(shows);
     console.log('shows returned');
   });
 
